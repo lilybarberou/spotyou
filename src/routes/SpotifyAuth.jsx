@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
 
-const CLIENT_ID = 'ba94b2034607402bb3e2a8591c7c89d2';
-const REDIRECT_URI = 'http://127.0.0.1:5173';
 const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
 const RESPONSE_TYPE = 'token';
 const SCOPES = 'user-read-recently-played user-top-read';
-const url = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPES}`;
+const url = `${AUTH_ENDPOINT}?client_id=${import.meta.env.CLIENT_ID}&redirect_uri=${
+    import.meta.env.VITE_REDIRECT_URI
+}&response_type=${RESPONSE_TYPE}&scope=${SCOPES}`;
 
 const SpotifyAuth = ({ children }) => {
     const [token, setToken] = useState('');
