@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
 const RESPONSE_TYPE = 'token';
 const SCOPES = 'user-read-recently-played user-top-read';
-const url = `${AUTH_ENDPOINT}?client_id=${import.meta.env.CLIENT_ID}&redirect_uri=${
+const url = `${AUTH_ENDPOINT}?client_id=${import.meta.env.VITE_CLIENT_ID}&redirect_uri=${
     import.meta.env.VITE_REDIRECT_URI
 }&response_type=${RESPONSE_TYPE}&scope=${SCOPES}`;
 
