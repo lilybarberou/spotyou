@@ -14,15 +14,19 @@ const Navigation = () => {
 
     useEffect(() => {
         async function getUserInfo() {
-            const { data } = await axios.get('https://api.spotify.com/v1/me', {
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${accessToken}`,
-                },
-            });
+            try {
+                const { data } = await axios.get('https://api.spotify.com/v1/me', {
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${accessToken}`,
+                    },
+                });
 
-            setUser({ name: data.display_name, img: data.images[0].url });
+                setUser({ name: data.display_name, img: data.images[0].url });
+            } catch (err) {
+                handleLogout();
+            }
         }
 
         getUserInfo();
