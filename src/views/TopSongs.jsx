@@ -9,17 +9,8 @@ const TopSongs = () => {
     // get top songs from api
     useEffect(() => {
         async function getLastSongs() {
-            const url = 'https://api.spotify.com/v1/me/top/tracks?limit=10';
-            const accessToken = localStorage.getItem('token');
-
             try {
-                const { data } = await axios.get(url, {
-                    headers: {
-                        Accept: 'application/json',
-                        'Content-Type': 'application/json',
-                        Authorization: `Bearer ${accessToken}`,
-                    },
-                });
+                const { data } = await axios.get('top/tracks?limit=10');
 
                 // organize array for component props
                 const items = data.items.map((e) => ({

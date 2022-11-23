@@ -15,14 +15,7 @@ const Navigation = () => {
     useEffect(() => {
         async function getUserInfo() {
             try {
-                const { data } = await axios.get('https://api.spotify.com/v1/me', {
-                    headers: {
-                        Accept: 'application/json',
-                        'Content-Type': 'application/json',
-                        Authorization: `Bearer ${accessToken}`,
-                    },
-                });
-
+                const { data } = await axios.get();
                 setUser({ name: data.display_name, img: Boolean(data.images.length) && data.images[0].url });
             } catch (err) {
                 handleLogout();

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
 const RESPONSE_TYPE = 'token';
@@ -10,6 +11,12 @@ const url = `${AUTH_ENDPOINT}?client_id=${import.meta.env.VITE_CLIENT_ID}&redire
 
 const SpotifyAuth = ({ children }) => {
     const [token, setToken] = useState('');
+
+    // axios configuration
+    axios.defaults.baseURL = 'https://api.spotify.com/v1/me/';
+    axios.defaults.headers.post['Accept'] = 'application/json';
+    axios.defaults.headers.post['Content-Type'] = 'application/json';
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
     useEffect(() => {
         const hash = window.location.hash;
