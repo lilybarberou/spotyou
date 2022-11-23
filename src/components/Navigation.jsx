@@ -23,7 +23,7 @@ const Navigation = () => {
                     },
                 });
 
-                setUser({ name: data.display_name, img: data.images[0].url });
+                setUser({ name: data.display_name, img: Boolean(data.images.length) && data.images[0].url });
             } catch (err) {
                 handleLogout();
             }
