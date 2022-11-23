@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const Card = ({ reverse = null, number = null, title, subtitle = '', link }) => {
+const Card = ({ reverse = null, title, subtitle = '', link }) => {
     return (
-        <S.Card reverse={reverse} number={number} to={link}>
+        <S.Card reverse={+reverse} to={link}>
             <div>
                 <span>{subtitle}</span>
                 <span>{title}</span>

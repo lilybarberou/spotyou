@@ -6,7 +6,7 @@ const Home = () => {
         <S.Cards>
             <Card title='Songs' subtitle='Most played' link='songs' />
             <Card title='Artists' subtitle='Most played' link='artists' />
-            <Card title='10' subtitle='Last played songs' link='last' number={true} reverse={true} />
+            <Card title='10' subtitle='Last played songs' link='last' reverse={true} />
             <Card title='Analytics' link='analytics' />
         </S.Cards>
     );
