@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="src/public/favicon.ico" alt="Logo" width="85" height="80">
+  <img src="public/favicon.png" alt="Logo" width="85" height="80">
 
   <h3 align="center">SpotYou</h3>
 
