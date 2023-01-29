@@ -46,6 +46,14 @@ const SpotifyAuth = ({ children }) => {
                 <br />
                 No one will know if you listen to Baby Shark.
             </span>
+            <S.Footer>
+                <span>
+                    <span>v{APP_VERSION}</span>
+                    <a href='https://lilybarberou.fr' target='_blank' rel='noopener noreferrer'>
+                        Lily B.
+                    </a>
+                </span>
+            </S.Footer>
         </S.Wrapper>
     );
 };
@@ -81,4 +89,20 @@ S.Link = styled.a`
     font-weight: bold;
     color: ${(props) => props.theme.red};
     width: fit-content;
+`;
+
+S.Footer = styled.div`
+    margin-left: auto;
+    display: flex;
+
+    & > span {
+        color: ${(props) => props.theme.fontgrey};
+        font-size: 12px;
+
+        & > a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: ${(props) => props.theme.fontgrey};
+        }
+    }
 `;
